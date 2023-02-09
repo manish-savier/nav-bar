@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +26,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color:var(--clr);
+            background-color: var(--clr);
         }
 
         .navigation {
@@ -38,10 +39,12 @@
             align-items: center;
             border-radius: 10px;
         }
+
         .navigation ul {
             display: flex;
             width: 350px;
         }
+
         .navigation ul li {
             position: relative;
             list-style: none;
@@ -60,9 +63,13 @@
             text-align: center;
             font-weight: 500;
         }
-        .navigation ul li a:active, .navigation ul li a:focus {
-            color: #ffffff;
+
+        .navigation ul li a:active,
+        .navigation ul li a:focus {
+            color: none;
+            background-color: none;
         }
+
         .navigation ul li a .icon {
             position: relative;
             display: block;
@@ -72,9 +79,11 @@
             transition: 0.5s;
             color: var(--clr);
         }
+
         .navigation ul li.active a .icon {
             transform: translateY(-35px);
         }
+
         .navigation ul li a .text {
             position: absolute;
             color: var(--clr);
@@ -85,10 +94,12 @@
             opacity: 0;
             transform: translateY(20px);
         }
+
         .navigation ul li.active a .text {
             opacity: 1;
             transform: translateY(10px);
         }
+
         .indicator {
             position: absolute;
             top: -50%;
@@ -99,6 +110,7 @@
             border: 6px solid var(--clr);
             transition: 0.5s;
         }
+
         .indicator::before {
             content: '';
             position: absolute;
@@ -122,47 +134,57 @@
             border-top-left-radius: 20px;
             box-shadow: 0px -10px 0 0 var(--clr);
         }
-        .navigation ul li:nth-child(1).active ~ .indicator {
+
+        .navigation ul li:nth-child(1).active~.indicator {
             transform: translateX(calc(70px * 0));
         }
-        .navigation ul li:nth-child(2).active ~ .indicator {
+
+        .navigation ul li:nth-child(2).active~.indicator {
             transform: translateX(calc(70px * 1));
         }
-        .navigation ul li:nth-child(3).active ~ .indicator {
+
+        .navigation ul li:nth-child(3).active~.indicator {
             transform: translateX(calc(70px * 2));
         }
-        .navigation ul li:nth-child(4).active ~ .indicator {
+
+        .navigation ul li:nth-child(4).active~.indicator {
             transform: translateX(calc(70px * 3));
         }
-        .navigation ul li:nth-child(5).active ~ .indicator {
+
+        .navigation ul li:nth-child(5).active~.indicator {
             transform: translateX(calc(70px * 4));
         }
-
-
     </style>
 </head>
+
 <body>
     <div class="navigation">
         <ul>
-            <li class="list active"><a href="#"><span class="icon"><i class="fa fa-train"></i></span><span class="text">Train</span></a></li>
-            <li class="list"><a href="#"><span class="icon"><i class="fa fa-bus"></i></span><span class="text">Bus</span></a></li>
-            <li class="list"><a href="#"><span class="icon"><i class="fa fa-car"></i></span><span class="text">Car</span></a></li>
-            <li class="list"><a href="#"><span class="icon"><i class="fa fa-truck"></i></span><span class="text">Truck</span></a></li>
-            <li class="list"><a href="#"><span class="icon"><i class="fa fa-plane"></i></span><span class="text">Plane</span></a></li>
+            <li class="list active"><a href="#"><span class="icon"><i class="fa fa-train"></i></span><span
+                        class="text">Train</span></a></li>
+            <li class="list"><a href="#"><span class="icon"><i class="fa fa-bus"></i></span><span
+                        class="text">Bus</span></a></li>
+            <li class="list"><a href="#"><span class="icon"><i class="fa fa-car"></i></span><span
+                        class="text">Car</span></a></li>
+            <li class="list"><a href="#"><span class="icon"><i class="fa fa-truck"></i></span><span
+                        class="text">Truck</span></a></li>
+            <li class="list"><a href="#"><span class="icon"><i class="fa fa-plane"></i></span><span
+                        class="text">Plane</span></a></li>
             <div class="indicator"></div>
         </ul>
     </div>
     <script>
         const list = document.querySelectorAll('.list');
-        function activeLink(){
-            list.forEach(item=>{
+        function activeLink() {
+            list.forEach(item => {
                 item.classList.remove('active')
             });
             this.classList.add('active');
         }
-        list.forEach(item=>{
-            item.addEventListener('click',activeLink);
+        list.forEach(item => {
+            item.addEventListener('click', activeLink);
         });
     </script>
 </body>
+
 </html>
